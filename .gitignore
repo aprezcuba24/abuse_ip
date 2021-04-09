@@ -152,7 +152,7 @@ typings/
 
 
 ### VisualStudioCode template
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -276,3 +276,5 @@ app/media/
 .env
 .envs/*
 !.envs/.local/
+
+/logs
