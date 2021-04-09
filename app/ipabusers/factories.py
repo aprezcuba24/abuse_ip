@@ -10,3 +10,10 @@ class CategoryFactory(DjangoModelFactory):
     name = factory.Faker("last_name")
     code = factory.Faker("last_name")
     description = factory.Faker("last_name")
+
+
+class IpAbusersFactory(DjangoModelFactory):
+    class Meta:
+        model = models.IpAbusers
+
+    ip = factory.Faker("last_name")

@@ -1,3 +1,4 @@
+from app.ipabusers.api.ipabusers import IpAbuserViewSet
 from app.ipabusers.api.category import CategoryViewSet
 from django.conf import settings
 from rest_framework.routers import DefaultRouter, SimpleRouter
@@ -11,6 +12,7 @@ else:
 
 router.register("users", UserViewSet)
 router.register("categories", CategoryViewSet)
+router.register("ips", IpAbuserViewSet)
 
 
 app_name = "api"
