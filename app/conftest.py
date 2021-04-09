@@ -12,3 +12,12 @@ def media_storage(settings, tmpdir):
 @pytest.fixture
 def user() -> User:
     return UserFactory()
+
+
+@pytest.fixture()
+def api_client(db, user):
+    """A Django test client logged in as an admin user."""
+    from django.test.client import Client
+
+    client = Client()
+    return client
