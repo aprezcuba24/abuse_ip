@@ -1,3 +1,5 @@
+from app.ipabusers.api.serializers.ip_category import IpCategorySerializer
+from app.utils.permissions import IsBotPermission
 from app.ipabusers.api.serializers.ip_abuser import IpAbuserSerializer
 from app.ipabusers.models.ipabusers import IpAbusers
 from rest_framework.mixins import CreateModelMixin, ListModelMixin, RetrieveModelMixin
@@ -9,4 +11,10 @@ class IpAbuserViewSet(CreateModelMixin, RetrieveModelMixin, ListModelMixin, Gene
     queryset = IpAbusers.objects.order_by("-created_at")
     serializer_class = IpAbuserSerializer
     pagination_class = Paginator
-    permission_classes = []
+    permission_classes = [IsBotPermission]
+
+    def get_serializer_class(self):
+        return IpCategorySerializer if self.action == "create" else super().get_serializer_class()
+
+    def perform_create(self, serializer):
+        serializer.save(reported_by=self.request.user)
