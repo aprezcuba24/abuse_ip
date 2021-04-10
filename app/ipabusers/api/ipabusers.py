@@ -12,6 +12,7 @@ class IpAbuserViewSet(CreateModelMixin, RetrieveModelMixin, ListModelMixin, Gene
     serializer_class = IpAbuserSerializer
     pagination_class = Paginator
     permission_classes = [IsBotPermission]
+    filterset_fields = ["ip"]
 
     def get_serializer_class(self):
         return IpCategorySerializer if self.action == "create" else super().get_serializer_class()

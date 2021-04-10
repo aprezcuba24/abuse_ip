@@ -1,6 +1,6 @@
 from app.ipabusers.models.ip_category import IpCategory
 from app.ipabusers.models.ipabusers import IpAbusers
-from app.ipabusers.factories import CategoryFactory, IpAbusersFactory
+from app.ipabusers.factories import CategoryFactory, IpAbusersFactory, IpCategoryFactory
 
 
 def test_ip_list(bot_client):
@@ -37,3 +37,15 @@ def test_ip_already_exists(bot_client):
     assert response.status_code == 201
     assert IpCategory.objects.filter(ip__ip="10.0.0.1", category=category).exists()
     assert len(IpAbusers.objects.all()) == 1
+
+
+def test_filter(bot_client):
+    IpCategoryFactory()
+    ip_category = IpCategoryFactory()
+    assert len(IpAbusers.objects.all()) == 2
+    response = bot_client.get(f"/api/ips/?ip={ip_category.ip.ip}")
+    assert response.status_code == 200
+    assert len(response.data["results"]) == 1
+    data = response.data["results"][0]
+    assert data["ip"] == ip_category.ip.ip
+    assert len(data["categories"]) == 1

@@ -1,3 +1,4 @@
+from app.users.tests.factories import UserFactory
 from factory.django import DjangoModelFactory
 import factory
 from . import models
@@ -16,4 +17,13 @@ class IpAbusersFactory(DjangoModelFactory):
     class Meta:
         model = models.IpAbusers
 
-    ip = factory.Faker("last_name")
+    ip = factory.Faker("ipv4")
+
+
+class IpCategoryFactory(DjangoModelFactory):
+    class Meta:
+        model = models.IpCategory
+
+    category = factory.SubFactory(CategoryFactory)
+    reported_by = factory.SubFactory(UserFactory)
+    ip = factory.SubFactory(IpAbusersFactory)

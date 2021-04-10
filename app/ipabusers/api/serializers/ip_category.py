@@ -1,3 +1,4 @@
+from app.ipabusers.api.serializers.category import CategorySerializer
 from app.ipabusers.models.ipabusers import IpAbusers
 from app.ipabusers.models.ip_category import IpCategory
 from rest_framework import serializers
@@ -17,3 +18,7 @@ class IpCategorySerializer(serializers.ModelSerializer):
         validated_data["ip"] = ip
         validated_data["users"] = [validated_data["reported_by"]]
         return super().create(validated_data)
+
+
+class IpCategoryReadSerializer(IpCategorySerializer):
+    category = CategorySerializer()

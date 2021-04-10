@@ -469,6 +469,17 @@ version = "3.1.0"
 
 [[package]]
 category = "main"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+name = "django-filter"
+optional = false
+python-versions = ">=3.5"
+version = "2.4.0"
+
+[package.dependencies]
+Django = ">=2.2"
+
+[[package]]
+category = "main"
 description = "Django model mixins and utilities"
 name = "django-model-utils"
 optional = false
@@ -1897,7 +1908,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "14aa097dd9742d04a632eb4e4fd8027abf1380f73b334eb591277792f72c3b17"
+content-hash = "2b85b3f7d1462193418f6fa086b98037d279e6a3a1aba6d3cb41699ac5ed21f4"
 python-versions = "3.8.6"
 
 [metadata.files]
@@ -2160,6 +2171,10 @@ django-environ = [
 django-extensions = [
     {file = "django-extensions-3.1.0.tar.gz", hash = "sha256:7cd002495ff0a0e5eb6cdd6be759600905b4e4079232ea27618fc46bdd853651"},
     {file = "django_extensions-3.1.0-py3-none-any.whl", hash = "sha256:c7f88625a53f631745d4f2bef9ec4dcb999ed59476393bdbbe99db8596778846"},
+]
+django-filter = [
+    {file = "django-filter-2.4.0.tar.gz", hash = "sha256:84e9d5bb93f237e451db814ed422a3a625751cbc9968b484ecc74964a8696b06"},
+    {file = "django_filter-2.4.0-py3-none-any.whl", hash = "sha256:e00d32cebdb3d54273c48f4f878f898dced8d5dfaad009438fe61ebdf535ace1"},
 ]
 django-model-utils = [
     {file = "django-model-utils-4.1.1.tar.gz", hash = "sha256:eb5dd05ef7d7ce6bc79cae54ea7c4a221f6f81e2aad7722933aee66489e7264b"},
