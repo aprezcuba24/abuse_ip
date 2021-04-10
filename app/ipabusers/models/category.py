@@ -8,3 +8,6 @@ class Category(BaseModel):
     name = CharField(_("Category"), max_length=255)
     code = CharField(_("Code"), max_length=255)
     description = TextField(_("Description"), max_length=255)
+
+    def __str__(self) -> str:
+        return self.name

@@ -11,3 +11,6 @@ class IpAbusers(BaseModel):
     ip = CharField(_("Ip address"), max_length=255)
 
     objects = ManagerQuerySet.as_manager()
+
+    def __str__(self) -> str:
+        return self.ip
