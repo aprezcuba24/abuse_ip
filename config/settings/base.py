@@ -301,3 +301,5 @@ REST_FRAMEWORK = {
 CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+BOT_SECRET_KEY = env("BOT_SECRET_KEY")

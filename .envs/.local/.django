@@ -15,3 +15,4 @@ CELERY_FLOWER_PASSWORD=debug
 
 DATABASE_URL=postgres://debug:debug@postgres/cu_abuseipdb
 CELERY_BROKER_URL=redis://redis:6379/0
+BOT_SECRET_KEY=7e56uy5lku534965b305u798dc4adf49

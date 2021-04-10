@@ -22,3 +22,15 @@ class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericV
     def me(self, request):
         serializer = UserSerializer(request.user, context={"request": request})
         return Response(status=status.HTTP_200_OK, data=serializer.data)
+
+    @action(url_path="get-or-create/(?P<external_id>[^/.]+)", detail=False, methods=["POST"], permission_classes=[])
+    def get_or_create(self, request, external_id):
+        print("request.data", request.data)
+        user = User.objects.filter(external_id=external_id).first()
+        if not user:
+            user = User()
+        data = {**{"username": external_id, "external_id": external_id}, **request.data}
+        serializer = self.get_serializer(user, data=data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)

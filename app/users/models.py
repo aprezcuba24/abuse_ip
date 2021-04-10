@@ -1,16 +1,22 @@
 from django.contrib.auth.models import AbstractUser
 from django.db.models import CharField
+from django.db.models.fields import BooleanField
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from app.utils.models import BaseModel
 
 
-class User(AbstractUser):
+class User(AbstractUser, BaseModel):
     """Default user for cu_abuseipdb."""
 
-    #: First and last name do not cover name patterns around the globe
-    name = CharField(_("Name of User"), blank=True, max_length=255)
-    first_name = None  # type: ignore
-    last_name = None  # type: ignore
+    external_id = CharField(_("External id"), db_index=True, blank=True, null=True, max_length=255)
+    lenguage_code = CharField(_("Lenguage code"), default="en", blank=True, max_length=255)
+    is_bot = BooleanField(_("Lenguage code"), blank=True, default=False)
+    first_name = CharField(_("first name"), max_length=30, blank=True, null=True)
+    last_name = CharField(_("last name"), max_length=150, blank=True, null=True)
+
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name} <{self.username}>"
 
     def get_absolute_url(self):
         """Get url for user's detail view.
