@@ -20,3 +20,7 @@ class IpCategory(BaseModel):
     @property
     def ip_address(self):
         return self.ip.ip
+
+    def save(self, *args, **kwargs) -> None:
+        self.users.add(self.reported_by)
+        return super().save(*args, **kwargs)

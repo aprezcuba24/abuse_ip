@@ -15,8 +15,12 @@ class IpCategorySerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         ip, _ = IpAbusers.objects.get_or_create(ip=validated_data["ip_address"])
         del validated_data["ip_address"]
+        reported_by = validated_data["reported_by"]
+        try:
+            return IpCategory.objects.get(ip=ip, users=reported_by, category=validated_data["category"])
+        except IpCategory.DoesNotExist:
+            pass
         validated_data["ip"] = ip
-        validated_data["users"] = [validated_data["reported_by"]]
         return super().create(validated_data)
 
 
