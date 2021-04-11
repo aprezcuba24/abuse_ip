@@ -63,6 +63,15 @@ def test_reported_by_same_user_and_other_category(bot_client, user):
     assert len(IpCategory.objects.all()) == 2
 
 
+def test_try_to_send_no_valid_ip(bot_client):
+    category = CategoryFactory()
+    response = bot_client.post("/api/ips/", data={"ip_address": "it isn't an IP", "category": str(category.id)})
+    assert response.status_code == 400
+    assert "ip" in response.data
+    assert len(IpAbusers.objects.all()) == 0
+    assert len(IpCategory.objects.all()) == 0
+
+
 def test_filter(bot_client):
     IpCategoryFactory()
     ip_category = IpCategoryFactory()

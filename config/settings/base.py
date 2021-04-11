@@ -298,6 +298,7 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "EXCEPTION_HANDLER": "app.utils.rf_exception_handler.exception_handler",
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
