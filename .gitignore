@@ -275,6 +275,6 @@ app/media/
 .ipython/
 .env
 .envs/*
-!.envs/.local/
+.envs/.local/*
 
 /logs

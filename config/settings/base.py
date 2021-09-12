@@ -307,3 +307,6 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # ------------------------------------------------------------------------------
 
 BOT_SECRET_KEY = env("BOT_SECRET_KEY")
+TELEGRAM_BOT_NAME = env("TELEGRAM_BOT_NAME")
+TELEGRAM_TOKEN = env("TELEGRAM_TOKEN")
+APP_HOST = env("APP_HOST")

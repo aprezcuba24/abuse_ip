@@ -14,6 +14,7 @@ class User(AbstractUser, BaseModel):
     is_bot = BooleanField(_("Lenguage code"), blank=True, default=False)
     first_name = CharField(_("first name"), max_length=30, blank=True, null=True)
     last_name = CharField(_("last name"), max_length=150, blank=True, null=True)
+    chat_id = CharField(_("Chat id"), blank=True, max_length=255)
 
     def __str__(self) -> str:
         return f"{self.first_name} {self.last_name} <{self.username}>"
