@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-19 00:32+0000\n"
+"POT-Creation-Date: 2021-09-19 21:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,31 @@ msgstr ""
 #: app/bot/bot_config/commands.py:7
 msgid "start_command_description"
 msgstr "Iniciar el bot"
+
+#: app/bot/handlers/new_report.py:14
+msgid "back_in_history_btn"
+msgstr ":arrow_left: Regresar"
+
+#: app/bot/handlers/new_report.py:18
+msgid "new_report_set_ip"
+msgstr "Escriba el IP"
+
+#: app/bot/handlers/new_report.py:33
+msgid "new_report_set_category"
+msgstr "Seleccione la categoría"
+
+#: app/bot/handlers/new_report.py:38
+#| msgid "new_report_set_ip"
+msgid "new_report_ivalid_ip"
+msgstr "Por favor escriba un IP válido. Ejemplo *10.0.0.1*"
+
+#: app/bot/handlers/new_report.py:45
+msgid "go_to_start"
+msgstr "Inicio"
+
+#: app/bot/handlers/new_report.py:49
+msgid "new_report_end"
+msgstr "Se ha registrado el IP *%s* con la categoría *%s*"
 
 #: app/bot/handlers/start.py:16
 msgid "start_last_report"
@@ -40,7 +65,8 @@ msgstr ""
 "Este bot es para reportes IP abusivos. \n"
 " \n"
 "Aquí puede: \n"
-":point_right: Ver los últimos reportes hechos por la comunidad. Estarán ordenados por fecha de registro. \n"
+":point_right: Ver los últimos reportes hechos por la comunidad. Estarán "
+"ordenados por fecha de registro. \n"
 ":point_right: Ver todos los reportes que has hecho. \n"
 ":point_right: Registrar un nuevo reporte."
 
