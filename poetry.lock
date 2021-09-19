@@ -622,6 +622,17 @@ Django = ">=1.11"
 djangorestframework = ">=3.6.0"
 
 [[package]]
+category = "main"
+description = "Emoji for Python"
+name = "emoji"
+optional = false
+python-versions = "*"
+version = "1.5.0"
+
+[package.extras]
+dev = ["pytest", "coverage", "coveralls"]
+
+[[package]]
 category = "dev"
 description = "execnet: rapid multi-Python deployment"
 name = "execnet"
@@ -2001,7 +2012,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "fe982fccbfb9517f4ce1fd96f29d71da177e55e650a462c989834c2c0e2dffde"
+content-hash = "00907f710c84f4a6ce187346bc13741f88b54382790840c790143d7e91a4ee3a"
 python-versions = "3.8.6"
 
 [metadata.files]
@@ -2344,6 +2355,9 @@ docutils = [
 drf-nested-routers = [
     {file = "drf-nested-routers-0.93.3.tar.gz", hash = "sha256:5bbb394ce382d8392cb7eb1e24eb8ad169bf095b22b8275b8f0f1e6697000434"},
     {file = "drf_nested_routers-0.93.3-py2.py3-none-any.whl", hash = "sha256:84e946cd486e9ec1fea12a6ca114adc0c68389ccc66e55f6c0c23ce31362485d"},
+]
+emoji = [
+    {file = "emoji-1.5.0.tar.gz", hash = "sha256:2eddd062f940924fb25a3108d84d77dc571927d91a419b4c30f37e253c791b19"},
 ]
 execnet = [
     {file = "execnet-1.8.0-py2.py3-none-any.whl", hash = "sha256:7a13113028b1e1cc4c6492b28098b3c6576c9dccc7973bfe47b342afadafb2ac"},

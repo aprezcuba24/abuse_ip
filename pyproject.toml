@@ -57,6 +57,7 @@ httptools = "^0.1.1"
 uvloop = "^0.15.2"
 django-filter = "^2.4.0"
 python-telegram-bot = "^13.7"
+emoji = "^1.5.0"
 
 [tool.poetry.dev-dependencies]
 Werkzeug="1.0.1"

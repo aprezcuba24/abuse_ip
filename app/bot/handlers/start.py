@@ -1,4 +1,6 @@
 from app.utils.telegram import Update, CallbackContext
+from app.utils.telegram import trans as _
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 class StartManager:
@@ -9,4 +11,15 @@ class StartManager:
         update.effective_message.edit_text(**self._process_message(update, context))
 
     def _process_message(self, update: Update, context: CallbackContext):
-        return {"text": "start message"}
+        keyboard = [
+            [
+                InlineKeyboardButton(text=str(_("start_last_report")), callback_data="last_report"),
+            ],
+            [
+                InlineKeyboardButton(text=str(_("start_my_reports")), callback_data="my_reports"),
+            ],
+            [
+                InlineKeyboardButton(text=str(_("start_new_report")), callback_data="new_report"),
+            ],
+        ]
+        return {"text": str(_("start_header")), "reply_markup": InlineKeyboardMarkup(keyboard)}
