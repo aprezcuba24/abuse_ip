@@ -1,8 +1,14 @@
-from telegram.ext import CallbackContext as BaseCallbackContext
+from telegram.ext import CallbackContext as BaseCallbackContext, Dispatcher
 from app.users.models import User
 
 
 class CallbackContext(BaseCallbackContext):
+    @classmethod
+    def from_update(cls, update: object, dispatcher: Dispatcher) -> "CallbackContext":
+        context = super().from_update(update, dispatcher)
+        context._update = update
+        return context
+
     @property
     def user_model(self) -> User:
         update = self._update

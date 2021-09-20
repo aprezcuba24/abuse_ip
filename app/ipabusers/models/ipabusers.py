@@ -6,15 +6,7 @@ from app.utils.models import BaseModel
 
 
 class ManagerQuerySet(QuerySet):
-    def get_or_create(self, *args, **kwargs) -> Tuple["IpAbusers", bool]:
-        try:
-            return self.get(**kwargs), False
-        except IpAbusers.DoesNotExist:
-            pass
-        object = IpAbusers(**kwargs)
-        object.full_clean()
-        object.save()
-        return object, True
+    pass
 
 
 class IpAbusers(BaseModel):

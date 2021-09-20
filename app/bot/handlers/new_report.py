@@ -1,3 +1,4 @@
+from app.ipabusers.services.ip_category import IpCategoryService
 from app.ipabusers.models.category import Category
 from django.core.validators import validate_ipv4_address
 from django.core.exceptions import ValidationError
@@ -39,14 +40,16 @@ class NewReport:
 
     def set_category(self, update: Update, context: CallbackContext) -> int:
         category_id = get_parameters(update.callback_query.data)[0]
-        print(category_id)
+        category = Category.objects.get(id=category_id)
+        ip = context.user_data["new_report"]["ip"]
+        IpCategoryService.create(ip=ip, reported_by=context.user_model, category=category)
         keyboard = [
             [
                 InlineKeyboardButton(text=_("go_to_start"), callback_data="start"),
             ]
         ]
         update.effective_message.reply_text(
-            _("new_report_end") % ("1.0.0.2", "403"),
+            _("new_report_end") % (ip, f"{category.name} ({category.code})"),
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(keyboard),
         )
