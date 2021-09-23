@@ -1,4 +1,3 @@
-from typing import Tuple
 from django.core.validators import validate_ipv46_address
 from django.db.models import CharField, QuerySet
 from django.utils.translation import gettext_lazy as _

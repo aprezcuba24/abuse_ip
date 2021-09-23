@@ -5,6 +5,7 @@ from app.ipabusers.models.ipabusers import IpAbusers
 from rest_framework.mixins import CreateModelMixin, ListModelMixin, RetrieveModelMixin
 from rest_framework.viewsets import GenericViewSet
 from app.utils.paginator import Paginator
+from django.views.generic.list import ListView
 
 
 class IpAbuserViewSet(CreateModelMixin, RetrieveModelMixin, ListModelMixin, GenericViewSet):
