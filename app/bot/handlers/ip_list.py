@@ -8,7 +8,7 @@ class IpListManager(PaginateMixin):
     queryset = IpAbusers.objects.order_by("-created_at")
 
     def _get_item_command(self, item: Any, **kwargs):
-        return f"show_ip {str(item.id)}"
+        return f"show_ip last_report {str(item.id)}"
 
     def _get_list_header(self, **kwargs):
         return _("last_report_header")

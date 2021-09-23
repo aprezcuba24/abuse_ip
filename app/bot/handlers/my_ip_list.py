@@ -10,7 +10,7 @@ class MyIpListManager(PaginateMixin):
         return IpAbusers.objects.get_by_user(context.user_model).order_by("id", "-created_at")
 
     def _get_item_command(self, item: Any, **kwargs):
-        return f"show_ip {str(item.id)}"
+        return f"show_ip my_reports {str(item.id)}"
 
     def _get_list_header(self, **kwargs):
         return _("my_reports_header")
