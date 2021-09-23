@@ -3,8 +3,10 @@ from .new_report import NewReport
 from .error import error_handler  # noqa
 from .ip_list import IpListManager
 from .my_ip_list import MyIpListManager
+from .show import ShowManager
 
 start_manager = StartManager()
 new_report_manager = NewReport()
 list_manager = IpListManager()
 my_list_manager = MyIpListManager()
+show_manager = ShowManager()

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-23 00:33+0000\n"
+"POT-Creation-Date: 2021-09-23 02:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,16 @@ msgstr ""
 msgid "start_command_description"
 msgstr "Iniciar el bot"
 
+#: app/bot/bot_config/commands.py:11
+#| msgid "start_command_description"
+msgid "show_ip_command_description"
+msgstr "Mostrar datos de un IP"
+
 #: app/bot/handlers/ip_list.py:14
 msgid "last_report_header"
 msgstr ":point_right: Ip reportados"
 
 #: app/bot/handlers/my_ip_list.py:16
-#| msgid "last_report_header"
 msgid "my_reports_header"
 msgstr ":point_right: Mis IP reportados"
 
@@ -54,6 +58,26 @@ msgstr "Inicio"
 #: app/bot/handlers/new_report.py:52
 msgid "new_report_end"
 msgstr "Se ha registrado el IP *%s* con la categoría *%s*"
+
+#: app/bot/handlers/show.py:14
+msgid "show_ip_set_ip_error"
+msgstr ":x: Debe poner el ip que desea ver."
+
+#: app/bot/handlers/show.py:26
+msgid "ip_category"
+msgstr ":point_right: %s (%s)"
+
+#: app/bot/handlers/show.py:30
+#| msgid "last_report_header"
+msgid "show_ip_header"
+msgstr ""
+"Datos del IP %s \n"
+" \n"
+"%s"
+
+#: app/bot/handlers/show.py:34
+msgid "show_ip_does_not_exist_error"
+msgstr ":x: Este ip no existe: %s"
 
 #: app/bot/handlers/start.py:16
 msgid "start_last_report"
