@@ -27,8 +27,11 @@ class PaginateMixin(BackButtonsMixin, metaclass=ABCMeta):
     def _callback_subfix(self, **kwargs):
         pass
 
-    def get_queryset(self):
+    def get_queryset(self, **kwargs):
         return self.queryset
+
+    def callback(self, update: Update, context: CallbackContext):
+        update.effective_message.edit_text(**self.paginate(update, context))
 
     def _list_out(self, **kwargs):
         return "start"
@@ -46,7 +49,7 @@ class PaginateMixin(BackButtonsMixin, metaclass=ABCMeta):
         return _("list_empty")
 
     def _list(self, page_number, update: Update, context: CallbackContext):
-        paginator = Paginator(self.get_queryset(), self.PAGE_SIZE)
+        paginator = Paginator(self.get_queryset(update=update, context=context), self.PAGE_SIZE)
         page = paginator.page(page_number)
         buttons = []
         if paginator.num_pages > 0:

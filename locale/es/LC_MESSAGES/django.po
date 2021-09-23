@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-22 23:55+0000\n"
+"POT-Creation-Date: 2021-09-23 00:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,14 @@ msgstr ""
 msgid "start_command_description"
 msgstr "Iniciar el bot"
 
-#: app/bot/handlers/ip_list.py:15
-#| msgid "start_header"
+#: app/bot/handlers/ip_list.py:14
 msgid "last_report_header"
-msgstr ":point_right:  Ip reportados"
+msgstr ":point_right: Ip reportados"
+
+#: app/bot/handlers/my_ip_list.py:16
+#| msgid "last_report_header"
+msgid "my_reports_header"
+msgstr ":point_right: Mis IP reportados"
 
 #: app/bot/handlers/new_report.py:15 app/bot/mixins/back_buttons_mixin.py:10
 msgid "back_in_history_btn"
@@ -78,19 +82,19 @@ msgstr ""
 msgid "go_to_start_btn"
 msgstr ":house: Inicio"
 
-#: app/bot/mixins/paginage_mixin.py:46
+#: app/bot/mixins/paginage_mixin.py:49
 msgid "list_empty"
 msgstr "No hay datos que mostrar."
 
-#: app/bot/mixins/paginage_mixin.py:58
+#: app/bot/mixins/paginage_mixin.py:61
 msgid "list_previous"
 msgstr ":left_arrow: Anterior"
 
-#: app/bot/mixins/paginage_mixin.py:65
+#: app/bot/mixins/paginage_mixin.py:68
 msgid "list_next"
 msgstr "Siguiente :right_arrow:"
 
-#: app/bot/mixins/paginage_mixin.py:84
+#: app/bot/mixins/paginage_mixin.py:87
 msgid "list_create"
 msgstr ":heavy_plus_sign: Crear nueva"
 
@@ -106,7 +110,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: app/ipabusers/models/ipabusers.py:13
+#: app/ipabusers/models/ipabusers.py:14
 msgid "Ip address"
 msgstr ""
 
