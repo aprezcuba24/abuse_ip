@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-19 21:01+0000\n"
+"POT-Creation-Date: 2021-09-22 23:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,28 +22,32 @@ msgstr ""
 msgid "start_command_description"
 msgstr "Iniciar el bot"
 
-#: app/bot/handlers/new_report.py:14
+#: app/bot/handlers/ip_list.py:15
+#| msgid "start_header"
+msgid "last_report_header"
+msgstr ":point_right:  Ip reportados"
+
+#: app/bot/handlers/new_report.py:15 app/bot/mixins/back_buttons_mixin.py:10
 msgid "back_in_history_btn"
 msgstr ":arrow_left: Regresar"
 
-#: app/bot/handlers/new_report.py:18
+#: app/bot/handlers/new_report.py:19
 msgid "new_report_set_ip"
 msgstr "Escriba el IP"
 
-#: app/bot/handlers/new_report.py:33
+#: app/bot/handlers/new_report.py:34
 msgid "new_report_set_category"
 msgstr "Seleccione la categoría"
 
-#: app/bot/handlers/new_report.py:38
-#| msgid "new_report_set_ip"
+#: app/bot/handlers/new_report.py:39
 msgid "new_report_ivalid_ip"
 msgstr "Por favor escriba un IP válido. Ejemplo *10.0.0.1*"
 
-#: app/bot/handlers/new_report.py:45
+#: app/bot/handlers/new_report.py:48
 msgid "go_to_start"
 msgstr "Inicio"
 
-#: app/bot/handlers/new_report.py:49
+#: app/bot/handlers/new_report.py:52
 msgid "new_report_end"
 msgstr "Se ha registrado el IP *%s* con la categoría *%s*"
 
@@ -70,6 +74,26 @@ msgstr ""
 ":point_right: Ver todos los reportes que has hecho. \n"
 ":point_right: Registrar un nuevo reporte."
 
+#: app/bot/mixins/back_buttons_mixin.py:7
+msgid "go_to_start_btn"
+msgstr ":house: Inicio"
+
+#: app/bot/mixins/paginage_mixin.py:46
+msgid "list_empty"
+msgstr "No hay datos que mostrar."
+
+#: app/bot/mixins/paginage_mixin.py:58
+msgid "list_previous"
+msgstr ":left_arrow: Anterior"
+
+#: app/bot/mixins/paginage_mixin.py:65
+msgid "list_next"
+msgstr "Siguiente :right_arrow:"
+
+#: app/bot/mixins/paginage_mixin.py:84
+msgid "list_create"
+msgstr ":heavy_plus_sign: Crear nueva"
+
 #: app/ipabusers/models/category.py:8
 msgid "Category"
 msgstr ""
@@ -82,7 +106,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: app/ipabusers/models/ipabusers.py:21
+#: app/ipabusers/models/ipabusers.py:13
 msgid "Ip address"
 msgstr ""
 
